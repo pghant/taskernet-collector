@@ -1,0 +1,4 @@
+requests
+praw
+psaw
+algoliasearch
