@@ -41,7 +41,7 @@ def process_comment(item):
 
 def process_message(item):
   body = remove_unicode(item.body)
-  if command := COLLECTOR_COMMAND_PM_SEARCH_RE.search(body):
+  if command := COLLECTOR_COMMAND_SEARCH_RE.search(body):
     item.reply(search_reply(command.group('terms')))
     item.mark_read()
 
