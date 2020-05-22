@@ -17,7 +17,9 @@ REPLY_FOOTER = """
 \n**Note**: Always check descriptions before importing anything. Never run anything unless you trust it completely.
 
 ---
-^(I'm a bot made by /u/JustRollWithIt. Taskernet search powered by) ^[Algolia](https://www.algolia.com/).
+^(Taskernet search powered by) ^[Algolia](https://www.algolia.com/).
+
+^(I'm a bot made by /u/JustRollWithIt. See my source on) ^[Github](https://github.com/pghant/taskernet-collector)! 
 """
 
 def search_reply(terms):
@@ -29,6 +31,11 @@ def search_reply(terms):
     desc = remove_html_tags(r.description)
     desc = textwrap.shorten(desc, width=500, placeholder='...')
     reply += f'* [{r.name}]({r.url}) - {desc}\n'
+    if len(r.source_links) > 0:
+      reply += '  * '
+      for link in r.source_links:
+        reply += f'[[Source]({link})] '
+      reply += '\n'
   reply += REPLY_FOOTER
   return reply
 
@@ -45,24 +52,28 @@ def process_message(item):
     item.reply(search_reply(command.group('terms')))
     item.mark_read()
 
-running = True
-while running:
-  try:
-    for item in reddit.inbox.stream():
-      if item.was_comment:
-        time.sleep(30) # Wait to process in case there are edits
-        try:
-          item.refresh()
-          item.replies.replace_more()
-          process_comment(item)
-        except ClientException as client_exception:
-          print(f'Got client exception {client_exception}')
-      else:
-        process_message(item)
-  except KeyboardInterrupt:
-    print('Ending now')
-    running = False
-  except RedditAPIException as exception:
-    time.sleep(300)
-  except PrawcoreException:
-    time.sleep(15)
+def main():
+  running = True
+  while running:
+    try:
+      for item in reddit.inbox.stream():
+        if item.was_comment:
+          time.sleep(30) # Wait to process in case there are edits
+          try:
+            item.refresh()
+            item.replies.replace_more()
+            process_comment(item)
+          except ClientException as client_exception:
+            print(f'Got client exception {client_exception}')
+        else:
+          process_message(item)
+    except KeyboardInterrupt:
+      print('Ending now')
+      running = False
+    except RedditAPIException as exception:
+      time.sleep(300)
+    except PrawcoreException:
+      time.sleep(15)
+
+if __name__ == '__main__':
+  main()

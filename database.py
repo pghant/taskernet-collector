@@ -10,6 +10,7 @@ class SearchResult():
     self.name = result['name']
     self.url = result['url']
     self.description = result['description']
+    self.source_links = result['sourceLinks'] if 'sourceLinks' in result else []
 
 
 class TaskerNetDatabase():
@@ -43,6 +44,7 @@ class TaskerNetDatabase():
     source_links = [source_link]
     if existing_object != None and 'sourceLinks' in existing_object:
       source_links.extend(existing_object['sourceLinks'])
+      source_links = list(set(source_links))
 
     date = None
     try:
@@ -67,7 +69,7 @@ class TaskerNetDatabase():
   def search(self, query):
     request_options = {
       'hitsPerPage': 5,
-      'attributesToRetrieve': ['name', 'url', 'description'],
+      'attributesToRetrieve': ['name', 'url', 'description', 'sourceLinks'],
       'attributesToHighlight': []
     }
     res = self.shares_index.search(query, request_options)
