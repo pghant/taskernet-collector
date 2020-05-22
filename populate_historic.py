@@ -42,7 +42,7 @@ def main():
 
   for comment in all_comments:
     taskernet_links = TASKERNET_RE.findall(comment.body)
-    if len(taskernet_links) > 0:
+    if comment.author != None and comment.author.name != 'taskernet-collector' and len(taskernet_links) > 0:
       source_link = f'https://reddit.com/comments/{comment.link_id[3:]}/_/{comment.id}'
       add_shares(taskernet_links, source_link)
       completed += 1

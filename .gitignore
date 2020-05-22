@@ -4,6 +4,7 @@
 *.ini
 start.sh
 logs/
+scratch.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
