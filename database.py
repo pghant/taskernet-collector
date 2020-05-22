@@ -2,6 +2,7 @@ import os
 
 import requests
 from algoliasearch.search_client import SearchClient
+from algoliasearch.exceptions import RequestException
 from urllib.parse import urlparse, parse_qs, quote_plus
 
 class SearchResult():
@@ -9,6 +10,7 @@ class SearchResult():
     self.name = result['name']
     self.url = result['url']
     self.description = result['description']
+    self.source_links = result['sourceLinks'] if 'sourceLinks' in result else []
 
 
 class TaskerNetDatabase():
@@ -18,19 +20,31 @@ class TaskerNetDatabase():
     self.db = SearchClient.create(app_id, api_key)
     self.shares_index = self.db.init_index('shares')
   
-  def add_share(self, share_link):
+  def add_share(self, share_link, source_link):
     parsed = urlparse(share_link)
     qparams = parse_qs(parsed.query)
 
     user = quote_plus(qparams['user'][0])
     share_id = quote_plus(qparams['id'][0])
+    object_id = f'{user}_{share_id}'
+
+    try:
+      existing_object = self.shares_index.get_object(object_id)
+    except RequestException:
+      existing_object = None
 
     resp = requests.get(f'https://taskernet.com/_ah/api/datashare/v1/shares/{user}/{share_id}')
 
     if resp.status_code != 200:
+      if existing_object != None:
+        self.shares_index.delete_object(object_id)
       return False
 
     share_data = resp.json()
+    source_links = [source_link]
+    if existing_object != None and 'sourceLinks' in existing_object:
+      source_links.extend(existing_object['sourceLinks'])
+      source_links = list(set(source_links))
 
     date = None
     try:
@@ -39,7 +53,8 @@ class TaskerNetDatabase():
       pass
 
     self.shares_index.save_object({
-      'objectID': f'{user}_{share_id}',
+      'objectID': object_id,
+      'sourceLinks': source_links,
       'type': share_data['info']['type'],
       'name': share_data['info']['name'],
       'description': share_data['info']['description'],
@@ -54,7 +69,7 @@ class TaskerNetDatabase():
   def search(self, query):
     request_options = {
       'hitsPerPage': 5,
-      'attributesToRetrieve': ['name', 'url', 'description'],
+      'attributesToRetrieve': ['name', 'url', 'description', 'sourceLinks'],
       'attributesToHighlight': []
     }
     res = self.shares_index.search(query, request_options)

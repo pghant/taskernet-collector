@@ -16,9 +16,10 @@ running = True
 while running:
   try:
     for submission in subreddit.stream.submissions():
+      source_link = f'https://redd.it/{submission.id}'
       taskernet_links = TASKERNET_RE.findall(f'{submission.url} {submission.selftext}')
       for link in taskernet_links:
-        db.add_share(link)
+        db.add_share(link, source_link)
   except KeyboardInterrupt:
     print('Ending now')
     running = False
