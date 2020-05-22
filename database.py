@@ -1,4 +1,5 @@
 import os
+import time
 
 import requests
 from algoliasearch.search_client import SearchClient
@@ -61,7 +62,8 @@ class TaskerNetDatabase():
       'date': date,
       'views': share_data['info']['stats']['views'],
       'downloads': share_data['info']['stats']['downloads'],
-      'url': share_data['info']['url']
+      'url': share_data['info']['url'],
+      'recordUpdated': int(time.time())
     })
 
     return True
