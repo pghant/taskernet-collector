@@ -18,8 +18,9 @@ while running:
     for comment in subreddit.stream.comments():
       if comment.author.name != 'taskernet-collector':
         taskernet_links = TASKERNET_RE.findall(comment.body)
+        source_link = f'https://reddit.com/comments/{comment.link_id[3:]}/_/{comment.id}'
         for link in taskernet_links:
-          db.add_share(link)
+          db.add_share(link, source_link)
   except KeyboardInterrupt:
     print('Ending now')
     running = False
