@@ -6,6 +6,8 @@ from algoliasearch.search_client import SearchClient
 from algoliasearch.exceptions import RequestException
 from urllib.parse import urlparse, parse_qs, quote_plus
 
+from utils import COLLECTOR_IGNORE_RE
+
 class SearchResult():
   def __init__(self, result):
     self.name = result['name']
@@ -36,12 +38,20 @@ class TaskerNetDatabase():
 
     resp = requests.get(f'https://taskernet.com/_ah/api/datashare/v1/shares/{user}/{share_id}')
 
+    # Share link is invalid, or was removed. Delete any stored record
     if resp.status_code != 200:
       if existing_object != None:
         self.shares_index.delete_object(object_id)
       return False
 
+    # Check if the share description has a tag to ignore this share. Delete any stored record
     share_data = resp.json()
+    if COLLECTOR_IGNORE_RE.search(share_data['info']['description']):
+      if existing_object != None:
+        self.shares_index.delete_object(object_id)
+      return False
+
+    # Add this source link to existing source links if any
     source_links = [source_link]
     if existing_object != None and 'sourceLinks' in existing_object:
       source_links.extend(existing_object['sourceLinks'])

@@ -28,7 +28,7 @@ The subject of the PM does not matter.
 
 ## Privacy and Security
 
-Taskernet collector only collects publicly posted Taskernet shares on the /r/tasker and /r/taskernet communities. It does not have access to Taskernet shares that were created and not shared on Reddit.
+Taskernet collector only collects publicly posted Taskernet shares on the /r/tasker and /r/taskernet communities. It does not have access to Taskernet shares that were created and not shared on Reddit. If you do not want your Taskernet share to be collected by the bot for any reason, you can add the text `[no-collect]` anywhere in the share description.
 
 Tasker is a powerful application with a lot of access to private data on your phone. It is important that users of Taskernet Collector **always** check the description of a share before importing, and do not enable anything without understanding what it does. Taskernet collector does not do any verification of shares it collects, and users are responsible for making sure anything they find through this project is safe to use.
 
