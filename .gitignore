@@ -2,6 +2,7 @@
 .DS_Store
 *.json
 *.ini
+*.log
 start.sh
 logs/
 scratch.py
