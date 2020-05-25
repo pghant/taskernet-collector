@@ -5,9 +5,8 @@ import logging
 import requests
 from algoliasearch.search_client import SearchClient
 from algoliasearch.exceptions import RequestException
-from urllib.parse import urlparse, parse_qs, quote_plus
 
-from utils import COLLECTOR_IGNORE_RE
+from utils import COLLECTOR_IGNORE_RE, share_object_id, parse_link
 
 class SearchResult():
   def __init__(self, result):
@@ -24,18 +23,19 @@ class TaskerNetDatabase():
     self.db = SearchClient.create(app_id, api_key)
     self.shares_index = self.db.init_index('shares')
   
-  def add_share(self, share_link, source_link):
-    parsed = urlparse(share_link)
-    qparams = parse_qs(parsed.query)
-
-    user = quote_plus(qparams['user'][0])
-    share_id = quote_plus(qparams['id'][0])
-    object_id = f'{user}_{share_id}'
-
+  def get_share_by_id(self, object_id):
     try:
-      existing_object = self.shares_index.get_object(object_id)
+      return self.shares_index.get_object(object_id)
     except RequestException:
-      existing_object = None
+      return None
+  
+  def add_share(self, share_link, source_link):
+    user, share_id = parse_link(share_link)
+    object_id = share_object_id(user=user, share_id=share_id)
+    if object_id == None:
+      logging.warning(f'Invalid share link: {share_link} at {source_link}')
+      return False
+    existing_object = self.get_share_by_id(object_id)
 
     resp = requests.get(f'https://taskernet.com/_ah/api/datashare/v1/shares/{user}/{share_id}')
 

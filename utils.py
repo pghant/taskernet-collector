@@ -1,4 +1,5 @@
 import re
+from urllib.parse import urlparse, parse_qs, quote_plus
 
 PRAW_SITE_NAME = 'taskernet_bot'
 MONITORED_SUBREDDITS = 'tasker+taskernet+justrollwithittest'
@@ -14,3 +15,23 @@ def remove_html_tags(text):
 
 def remove_unicode(text):
   return re.sub(UNICODE_RE, ' ', text)
+
+# Either share_link or both user and share_id are required
+def share_object_id(share_link=None, user=None, share_id=None):
+  try:
+    if share_link != None:
+      user, share_id = parse_link(share_link)
+    return f'{user}_{share_id}'
+  except:
+    return None
+
+def parse_link(share_link):
+  try:
+    parsed = urlparse(share_link)
+    qparams = parse_qs(parsed.query)
+
+    user = quote_plus(qparams['user'][0])
+    share_id = quote_plus(qparams['id'][0])
+    return user, share_id
+  except:
+    return None, None
