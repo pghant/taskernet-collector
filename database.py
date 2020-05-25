@@ -1,5 +1,6 @@
 import os
 import time
+import logging
 
 import requests
 from algoliasearch.search_client import SearchClient
@@ -38,10 +39,13 @@ class TaskerNetDatabase():
 
     resp = requests.get(f'https://taskernet.com/_ah/api/datashare/v1/shares/{user}/{share_id}')
 
-    # Share link is invalid, or was removed. Delete any stored record
-    if resp.status_code != 200:
+    # Share link is removed. Delete any stored record
+    if resp.status_code == 404:
       if existing_object != None:
         self.shares_index.delete_object(object_id)
+      return True
+    elif resp.status_code != 200: # some other error
+      logging.warning(f'Error when adding: {share_link}, {source_link}')
       return False
 
     # Check if the share description has a tag to ignore this share. Delete any stored record
