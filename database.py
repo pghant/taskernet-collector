@@ -80,8 +80,8 @@ class TaskerNetDatabase():
         'url': share_data['info']['url'],
         'recordUpdated': int(time.time())
       })
-    except Exception e:
-      logging.error(f'Error when adding to index: {e.message}')
+    except:
+      logging.error(f'Error when adding to index: {share_link}')
       return False
 
     return True
