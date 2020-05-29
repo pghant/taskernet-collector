@@ -67,18 +67,22 @@ class TaskerNetDatabase():
     except ValueError:
       pass
 
-    self.shares_index.save_object({
-      'objectID': object_id,
-      'sourceLinks': source_links,
-      'type': share_data['info']['type'],
-      'name': share_data['info']['name'],
-      'description': share_data['info']['description'],
-      'date': date,
-      'views': share_data['info']['stats']['views'],
-      'downloads': share_data['info']['stats']['downloads'],
-      'url': share_data['info']['url'],
-      'recordUpdated': int(time.time())
-    })
+    try:
+      self.shares_index.save_object({
+        'objectID': object_id,
+        'sourceLinks': source_links,
+        'type': share_data['info']['type'],
+        'name': share_data['info']['name'],
+        'description': share_data['info']['description'],
+        'date': date,
+        'views': share_data['info']['stats']['views'],
+        'downloads': share_data['info']['stats']['downloads'],
+        'url': share_data['info']['url'],
+        'recordUpdated': int(time.time())
+      })
+    except Exception e:
+      logging.error(f'Error when adding to index: {e.message}')
+      return False
 
     return True
   

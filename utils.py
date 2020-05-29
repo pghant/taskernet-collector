@@ -2,7 +2,7 @@ import re
 from urllib.parse import urlparse, parse_qs, quote_plus
 
 PRAW_SITE_NAME = 'taskernet_bot'
-MONITORED_SUBREDDITS = 'tasker+taskernet+justrollwithittest'
+MONITORED_SUBREDDITS = 'tasker+taskernet'
 
 TASKERNET_RE = re.compile(r'https://taskernet\.com/shares[^\\]*?id=[\w\d+%.-]+')
 COLLECTOR_COMMAND_SEARCH_RE = re.compile(r'search "(?P<terms>.*?)"', re.IGNORECASE)
