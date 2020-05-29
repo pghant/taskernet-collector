@@ -4,7 +4,7 @@ import requests
 
 from utils import parse_link
 
-def get_share_data(share_url):
+def get_share_data(share_link):
   user, share_id = parse_link(share_link)
   if user == None:
     raise InvalidShareUrlError(api_url)

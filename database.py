@@ -132,7 +132,7 @@ class TaskerNetDatabase():
     request_options = {
       'attributesToRetrieve': ['url'],
       'attributesToHighlight': [],
-      'filters': f'recordUpdated <= {timestamp}'
+      'filters': f'recordUpdated <= {timestamp}',
       'hitsPerPage': num_retrieve
     }
     res = self.shares_index.search('', request_options)
