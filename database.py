@@ -90,3 +90,12 @@ class TaskerNetDatabase():
     }
     res = self.shares_index.search(query, request_options)
     return [SearchResult(r) for r in res['hits']]
+  
+  def record_count(self):
+    request_options = {
+      'hitsPerPage': 0,
+      'attributesToRetrieve': [],
+      'attributesToHighlight': []
+    }
+    res = self.shares_index.search('', request_options)
+    return res['nbHits']
