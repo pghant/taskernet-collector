@@ -55,6 +55,6 @@ def parse_datadef():
   with open('datadef.json', 'w') as f:
     json.dump(lookup, f)
 
-def get_datadef_lookup():
+def get_datadef():
   with open('datadef.json', 'r') as f:
     return json.load(f)
