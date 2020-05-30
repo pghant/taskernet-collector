@@ -1,5 +1,7 @@
 import re
 from urllib.parse import urlparse, parse_qs, quote_plus
+import xml.etree.ElementTree as ET
+import json
 
 PRAW_SITE_NAME = 'taskernet_bot'
 MONITORED_SUBREDDITS = 'tasker+taskernet'
@@ -35,3 +37,24 @@ def parse_link(share_link):
     return user, share_id
   except:
     return None, None
+
+def parse_datadef():
+  lookup = {
+    'state': {},
+    'action': {},
+    'event': {}
+  }
+
+  tree = ET.parse('datadef.xml')
+  root = tree.getroot()
+
+  for element in root:
+    if element.tag in {'state', 'action', 'event'}:
+      lookup[element.tag][element.attrib['code']] = { 'name': element.attrib['nameLocal'] }
+
+  with open('datadef.json', 'w') as f:
+    json.dump(lookup, f)
+
+def get_datadef_lookup():
+  with open('datadef.json', 'r') as f:
+    return json.load(f)
