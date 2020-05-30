@@ -2,6 +2,7 @@ import re
 from urllib.parse import urlparse, parse_qs, quote_plus
 import xml.etree.ElementTree as ET
 import json
+import functools
 
 PRAW_SITE_NAME = 'taskernet_bot'
 MONITORED_SUBREDDITS = 'tasker+taskernet'
@@ -55,16 +56,12 @@ def parse_datadef():
   with open('datadef.json', 'w') as f:
     json.dump(lookup, f)
 
-__data_def = None
+@functools.lru_cache(maxsize=16)
 def get_datadef():
-  if __data_def:
-    return __data_def
   with open('datadef.json', 'r') as f:
-    __data_def = json.load(f)
-    return __data_def
+    return json.load(f)
 
 def get_tags_and_names(tasker_data):
-  # data = tnapi.get_tasker_data(share_link)
   lookup = get_datadef()
   root = ET.fromstring(tasker_data)
   all_tags = set()

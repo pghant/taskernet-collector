@@ -6,7 +6,7 @@ import requests
 from algoliasearch.search_client import SearchClient
 from algoliasearch.exceptions import RequestException
 
-from utils import COLLECTOR_IGNORE_RE, share_object_id, parse_link
+import utils
 import taskernet_api as api
 
 class SearchResult():
@@ -31,8 +31,8 @@ class TaskerNetDatabase():
       return None
   
   def add_share(self, share_link, source_link):
-    user, share_id = parse_link(share_link)
-    object_id = share_object_id(user=user, share_id=share_id)
+    user, share_id = utils.parse_link(share_link)
+    object_id = utils.share_object_id(user=user, share_id=share_id)
     if object_id == None:
       logging.warning(f'Invalid share link: {share_link} at {source_link}')
       return False
@@ -40,6 +40,7 @@ class TaskerNetDatabase():
 
     try:
       share_data = api.get_share_data(share_link)
+      tasker_data = api.get_tasker_data(share_link)
     except api.ShareDoesNotExistError:
       # Share link is removed. Delete any stored record
       if existing_object != None:
@@ -50,7 +51,7 @@ class TaskerNetDatabase():
       return False
 
     # Check if the share description has a tag to ignore this share. Delete any stored record
-    if COLLECTOR_IGNORE_RE.search(share_data['info']['description']):
+    if utils.COLLECTOR_IGNORE_RE.search(share_data['info']['description']):
       if existing_object != None:
         self.shares_index.delete_object(object_id)
       return True
@@ -60,6 +61,12 @@ class TaskerNetDatabase():
     if existing_object != None and 'sourceLinks' in existing_object:
       source_links.extend(existing_object['sourceLinks'])
       source_links = list(set(source_links))
+
+    try:
+      tags, names = utils.get_tags_and_names(tasker_data)
+    except:
+      logging.warning(f'Error when parsing tasker data: {share_link}')
+      return False
 
     date = None
     try:
@@ -78,7 +85,9 @@ class TaskerNetDatabase():
         'views': share_data['info']['stats']['views'],
         'downloads': share_data['info']['stats']['downloads'],
         'url': share_data['info']['url'],
-        'recordUpdated': int(time.time())
+        'recordUpdated': int(time.time()),
+        'tags': tags,
+        'names': names
       })
     except:
       logging.error(f'Error when adding to index: {share_link}')
@@ -89,6 +98,7 @@ class TaskerNetDatabase():
   def update_share(self, object_id, share_link):
     try:
       share_data = api.get_share_data(share_link)
+      tasker_data = api.get_tasker_data(share_link)
     except api.ShareDoesNotExistError:
       # Share link is removed. Delete record
       self.shares_index.delete_object(object_id)
@@ -97,6 +107,12 @@ class TaskerNetDatabase():
       logging.warning(f'Error when updating: {share_link}')
       return False
     
+    try:
+      tags, names = utils.get_tags_and_names(tasker_data)
+    except:
+      logging.warning(f'Error when parsing tasker data: {share_link}')
+      return False
+
     date = None
     try:
       date = int(share_data['info']['date'])
@@ -109,7 +125,9 @@ class TaskerNetDatabase():
       'date': date,
       'views': share_data['info']['stats']['views'],
       'downloads': share_data['info']['stats']['downloads'],
-      'recordUpdated': int(time.time())
+      'recordUpdated': int(time.time()),
+      'tags': tags,
+      'names': names
     })
 
     return True
