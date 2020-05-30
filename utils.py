@@ -55,6 +55,28 @@ def parse_datadef():
   with open('datadef.json', 'w') as f:
     json.dump(lookup, f)
 
+__data_def = None
 def get_datadef():
+  if __data_def:
+    return __data_def
   with open('datadef.json', 'r') as f:
-    return json.load(f)
+    __data_def = json.load(f)
+    return __data_def
+
+def get_tags_and_names(tasker_data):
+  # data = tnapi.get_tasker_data(share_link)
+  lookup = get_datadef()
+  root = ET.fromstring(tasker_data)
+  all_tags = set()
+  all_names = set()
+  for element in root.iter():
+    if element.tag in {'State', 'Event', 'Action'}:
+      code = element.find('code').text
+      tasker_element = lookup[element.tag.lower()][code] if code in lookup[element.tag.lower()] else None
+      if tasker_element:
+        if 'excludeItemName' not in tasker_element:
+          all_names.add(tasker_element['name'])
+        if 'tags' in tasker_element:
+          all_tags.update(tasker_element['tags'])
+  
+  return list(all_tags), list(all_names)

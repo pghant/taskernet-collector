@@ -168,7 +168,7 @@
     },
     "165": {
       "name": "Variable Value",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "136": {
       "name": "VPN Connected",
@@ -416,7 +416,7 @@
     },
     "548": {
       "name": "Flash",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "343": {
       "name": "Test Media",
@@ -445,7 +445,7 @@
     "551": {
       "name": "Menu",
       "tags": ["input"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "779": {
       "name": "Notify Cancel",
@@ -454,17 +454,17 @@
     "550": {
       "name": "Popup",
       "tags": ["input", "scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "941": {
       "name": "HTML Popup",
       "tags": ["input", "scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "552": {
       "name": "Popup Task Buttons",
       "tags": ["input", "scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "999": {
       "name": "Set Light"
@@ -984,7 +984,7 @@
     "877": {
       "name": "Send Intent",
       "tags": ["intent"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "901": {
       "name": "Stop Location",
@@ -1057,7 +1057,7 @@
     "143": {
       "name": "Edit Scene",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "142": {
       "name": "Edit Task",
@@ -1223,132 +1223,132 @@
     "46": {
       "name": "Create Scene",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "69": {
       "name": "Element Create",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "73": {
       "name": "Element Destroy",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "47": {
       "name": "Show Scene",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "48": {
       "name": "Hide Scene",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "49": {
       "name": "Destroy Scene",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "194": {
       "name": "Test Scene",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "195": {
       "name": "Test Element",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "60": {
       "name": "Element Add GeoMarker",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "63": {
       "name": "Element Delete GeoMarker",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "68": {
       "name": "Element Focus",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "57": {
       "name": "Element Position",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "58": {
       "name": "Element Size",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "67": {
       "name": "Element Depth",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "53": {
       "name": "Element Web Control",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "612": {
       "name": "Element Video Control",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "64": {
       "name": "Element Map Control",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "66": {
       "name": "Element Image",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "54": {
       "name": "Element Text Colour",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "71": {
       "name": "Element Text Size",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "51": {
       "name": "Element Text",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "50": {
       "name": "Element Value",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "55": {
       "name": "Element Back Colour",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "56": {
       "name": "Element Border",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "65": {
       "name": "Element Visibility",
       "tags": ["scene"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "300": {
       "name": "Anchor",
       "tags": ["tasker"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "544": {
       "name": "Timer Widget Control",
@@ -1371,45 +1371,45 @@
     },
     "135": {
       "name": "Goto",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "37": {
       "name": "If",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "43": {
       "name": "Else",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "38": {
       "name": "End If",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "39": {
       "name": "For",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "40": {
       "name": "End For",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "126": {
       "name": "Return",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "131": {
       "name": "JavaScript",
       "tags": ["javascript"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "129": {
       "name": "JavaScriptlet",
       "tags": ["javascript"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "130": {
       "name": "Perform Task",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "159": {
       "name": "Profile Status",
@@ -1440,72 +1440,72 @@
     },
     "137": {
       "name": "Stop",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "30": {
       "name": "Wait",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "35": {
       "name": "Wait Until",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "345": {
       "name": "Test Variable",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "355": {
       "name": "Array Push",
       "tags": ["array"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "356": {
       "name": "Array Pop",
       "tags": ["array"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "354": {
       "name": "Array Set",
       "tags": ["array"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "369": {
       "name": "Array Process",
       "tags": ["array"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "357": {
       "name": "Array Clear",
       "tags": ["array"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "549": {
       "name": "Variable Clear",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "596": {
       "name": "Variable Convert",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "890": {
       "name": "Variable Subtract",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "888": {
       "name": "Variable Add",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "592": {
       "name": "Variable Join",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "597": {
       "name": "Variable Section",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "595": {
       "name": "Variable Query",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "598": {
       "name": "Variable Search Replace",
@@ -1513,7 +1513,7 @@
     },
     "547": {
       "name": "Variable Set",
-      "excludeItem": true
+      "excludeItemName": true
     },
     "590": {
       "name": "Variable Split",
@@ -1743,7 +1743,7 @@
     "599": {
       "name": "Intent Received",
       "tags": ["intent"],
-      "excludeItem": true
+      "excludeItemName": true
     },
     "411": {
       "name": "Device Boot",
