@@ -1,8 +1,10 @@
 # taskernet-collector
 .DS_Store
 *.json
+!datadef.json
 *.ini
 *.log
+*.xml
 start.sh
 logs/
 scratch.py

@@ -10,11 +10,16 @@ app_id = os.getenv('ALGOLIA_APP_ID')
 
 client = SearchClient.create(app_id, api_key)
 share_index = client.init_index('shares')
+plugin_index = client.init_index('plugins')
 
-hits = []
+def backup_index(index):
+  hits = []
 
-for hit in share_index.browse_objects({'query': ''}):
-  hits.append(hit)
+  for hit in index.browse_objects({'query': ''}):
+    hits.append(hit)
 
-with open('backup.json', 'w') as f:
-  json.dump(hits, f)
+  with open(f'backup-{index.name}.json', 'w') as f:
+    json.dump(hits, f)
+
+backup_index(share_index)
+backup_index(plugin_index)

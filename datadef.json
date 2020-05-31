@@ -1,0 +1,1873 @@
+{
+  "state": {
+    "154": {
+      "name": "Active User"
+    },
+    "100": {
+      "name": "Airplane Mode",
+      "tags": ["network"]
+    },
+    "135": {
+      "name": "Auto-Sync"
+    },
+    "140": {
+      "name": "Battery Level",
+      "tags": ["battery"]
+    },
+    "141": {
+      "name": "Battery Temperature",
+      "tags": ["battery"]
+    },
+    "3": {
+      "name": "BT Connected",
+      "tags": ["bluetooth"]
+    },
+    "4": {
+      "name": "BT Near",
+      "tags": ["bluetooth"]
+    },
+    "2": {
+      "name": "BT Status",
+      "tags": ["bluetooth"]
+    },
+    "5": {
+      "name": "Calendar Entry",
+      "tags": ["calendar"]
+    },
+    "40": {
+      "name": "Call",
+      "tags": ["phone"]
+    },
+    "7": {
+      "name": "Cell Near",
+      "tags": ["location"]
+    },
+    "186": {
+      "name": "Custom Setting",
+      "tags": ["settings"]
+    },
+    "188": {
+      "name": "Dark Mode",
+      "tags": ["settings"]
+    },
+    "16": {
+      "name": "Device Idle",
+      "tags": ["system"]
+    },
+    "122": {
+      "name": "Display Orientation",
+      "tags": ["display"]
+    },
+    "123": {
+      "name": "Display State",
+      "tags": ["display"]
+    },
+    "80": {
+      "name": "Docked"
+    },
+    "175": {
+      "name": "Dreaming"
+    },
+    "161": {
+      "name": "Ethernet Connect",
+      "tags": ["network"]
+    },
+    "12": {
+      "name": "HDMI Plugged",
+      "tags": ["system"]
+    },
+    "30": {
+      "name": "Headset Plugged",
+      "tags": ["media"]
+    },
+    "182": {
+      "name": "Heart Rate",
+      "tags": ["sensor"]
+    },
+    "185": {
+      "name": "Humidity",
+      "tags": ["sensor"]
+    },
+    "50": {
+      "name": "Keyboard Out",
+      "tags": ["input"]
+    },
+    "103": {
+      "name": "Light Level",
+      "tags": ["sensor"]
+    },
+    "106": {
+      "name": "Magnetic Field",
+      "tags": ["sensor"]
+    },
+    "105": {
+      "name": "Media Button",
+      "tags": ["media"]
+    },
+    "107": {
+      "name": "Missed Call",
+      "tags": ["phone"]
+    },
+    "110": {
+      "name": "Mobile Network",
+      "tags": ["network"]
+    },
+    "195": {
+      "name": "NFC Status",
+      "tags": ["nfc"]
+    },
+    "120": {
+      "name": "Orientation",
+      "tags": ["sensor"]
+    },
+    "149": {
+      "name": "Pen Menu"
+    },
+    "148": {
+      "name": "Pen Out"
+    },
+    "10": {
+      "name": "Power",
+      "tags": ["system"]
+    },
+    "14": {
+      "name": "Power Save Mode",
+      "tags": ["settings", "battery"]
+    },
+    "104": {
+      "name": "Pressure",
+      "tags": ["sensor"]
+    },
+    "142": {
+      "name": "Profile Active",
+      "tags": ["tasker"]
+    },
+    "125": {
+      "name": "Proximity Sensor",
+      "tags": ["sensor"]
+    },
+    "145": {
+      "name": "Signal Strength",
+      "tags": ["network"]
+    },
+    "143": {
+      "name": "Task Running",
+      "tags": ["tasker"]
+    },
+    "180": {
+      "name": "Temperature",
+      "tags": ["sensor"]
+    },
+    "147": {
+      "name": "Unread Text",
+      "tags": ["sms"]
+    },
+    "150": {
+      "name": "USB Connected",
+      "tags": ["system"]
+    },
+    "165": {
+      "name": "Variable Value",
+      "excludeItemName": true
+    },
+    "136": {
+      "name": "VPN Connected",
+      "tags": ["network"]
+    },
+    "160": {
+      "name": "Wifi Connected",
+      "tags": ["network"]
+    },
+    "170": {
+      "name": "Wifi Near",
+      "tags": ["network"]
+    }
+  },
+  "action": {
+    "245": {
+      "name": "Back Button",
+      "tags": ["input"]
+    },
+    "246": {
+      "name": "Long Power Button",
+      "tags": ["input"]
+    },
+    "247": {
+      "name": "Show Recents",
+      "tags": ["ui"]
+    },
+    "244": {
+      "name": "Toggle Split Screen",
+      "tags": ["ui"]
+    },
+    "219": {
+      "name": "Quick Settings",
+      "tags": ["app"]
+    },
+    "249": {
+      "name": "System Screenshot",
+      "tags": ["camera"]
+    },
+    "259": {
+      "name": "Notification Pulse",
+      "tags": ["notification"]
+    },
+    "903": {
+      "name": "Get Voice",
+      "tags": ["voice"]
+    },
+    "905": {
+      "name": "Location Mode",
+      "tags": ["location", "settings"]
+    },
+    "906": {
+      "name": "Immersive Mode",
+      "tags": ["ui", "settings"]
+    },
+    "907": {
+      "name": "Status Bar Icons"
+    },
+    "22": {
+      "name": "Load Last App",
+      "tags": ["app"]
+    },
+    "804": {
+      "name": "Input Method Select",
+      "tags": ["input"]
+    },
+    "806": {
+      "name": "Turn On",
+      "tags": ["display", "system"]
+    },
+    "175": {
+      "name": "Power Mode",
+      "tags": ["settings"]
+    },
+    "433": {
+      "name": "Mobile Data",
+      "tags": ["network"]
+    },
+    "820": {
+      "name": "Stay On",
+      "tags": ["display", "system"]
+    },
+    "312": {
+      "name": "Do Not Disturb",
+      "tags": ["settings"]
+    },
+    "313": {
+      "name": "Sound Mode",
+      "tags": ["sound"]
+    },
+    "314": {
+      "name": "Authentication Dialog",
+      "tags": ["input"]
+    },
+    "316": {
+      "name": "Display Size",
+      "tags": ["display"]
+    },
+    "317": {
+      "name": "NFC",
+      "tags": ["nfc"]
+    },
+    "318": {
+      "name": "Force Rotation",
+      "tags": ["settings"]
+    },
+    "319": {
+      "name": "Ask Permissions",
+      "tags": ["system"]
+    },
+    "320": {
+      "name": "Ping",
+      "tags": ["network"]
+    },
+    "321": {
+      "name": "GD Upload",
+      "tags": ["google drive"]
+    },
+    "322": {
+      "name": "Data Backup",
+      "tags": ["tasker"]
+    },
+    "323": {
+      "name": "Airplane Radios",
+      "tags": ["network"]
+    },
+    "324": {
+      "name": "GD List",
+      "tags": ["google drive"]
+    },
+    "325": {
+      "name": "GD Trash",
+      "tags": ["google drive"]
+    },
+    "326": {
+      "name": "GD Download",
+      "tags": ["google drive"]
+    },
+    "327": {
+      "name": "GD Sign In",
+      "tags": ["google drive"]
+    },
+    "328": {
+      "name": "Keyboard",
+      "tags": ["input"]
+    },
+    "329": {
+      "name": "Navigation Bar",
+      "tags": ["ui"]
+    },
+    "330": {
+      "name": "NFC Tag",
+      "tags": ["nfc"]
+    },
+    "333": {
+      "name": "Airplane Mode",
+      "tags": ["network"]
+    },
+    "334": {
+      "name": "Say WaveNet",
+      "tags": ["voice"]
+    },
+    "335": {
+      "name": "App Info",
+      "tags": ["app"]
+    },
+    "337": {
+      "name": "Notification Settings",
+      "tags": ["notification"]
+    },
+    "338": {
+      "name": "Notification Category Info",
+      "tags": ["notification"]
+    },
+    "339": {
+      "name": "HTTP Request",
+      "tags": ["http"]
+    },
+    "340": {
+      "name": "Bluetooth Connection",
+      "tags": ["bluetooth"]
+    },
+    "351": {
+      "name": "HTTP Auth",
+      "tags": ["http"]
+    },
+    "358": {
+      "name": "Bluetooth Info",
+      "tags": ["bluetooth"]
+    },
+    "360": {
+      "name": "Input Dialog",
+      "tags": ["input"]
+    },
+    "361": {
+      "name": "Dark Mode",
+      "tags": ["settings"]
+    },
+    "362": {
+      "name": "Set Assistant",
+      "tags": ["app"]
+    },
+    "363": {
+      "name": "Mobile Network Type",
+      "tags": ["network"]
+    },
+    "364": {
+      "name": "Test Next Alarm",
+      "tags": ["alarm"]
+    },
+    "365": {
+      "name": "Tasker Function",
+      "tags": ["tasker"]
+    },
+    "366": {
+      "name": "Get Location v2",
+      "tags": ["location"]
+    },
+    "367": {
+      "name": "Camera",
+      "tags": ["camera"]
+    },
+    "368": {
+      "name": "Pick Location",
+      "tags": ["location"]
+    },
+    "370": {
+      "name": "Shortcut",
+      "tags": ["app"]
+    },
+    "375": {
+      "name": "ADB Wifi",
+      "tags": ["settings"]
+    },
+    "248": {
+      "name": "Turn Off",
+      "tags": ["system"]
+    },
+    "252": {
+      "name": "Set SMS App",
+      "tags": ["app", "sms"]
+    },
+    "511": {
+      "name": "Torch"
+    },
+    "548": {
+      "name": "Flash",
+      "excludeItemName": true
+    },
+    "343": {
+      "name": "Test Media",
+      "tags": ["media"]
+    },
+    "156": {
+      "name": "MIDI Play",
+      "tags": ["media"]
+    },
+    "523": {
+      "name": "Notify",
+      "tags": ["notification"]
+    },
+    "525": {
+      "name": "Notify LED",
+      "tags": ["notification"]
+    },
+    "538": {
+      "name": "Notify Sound",
+      "tags": ["notification"]
+    },
+    "536": {
+      "name": "Notify Vibrate",
+      "tags": ["notification"]
+    },
+    "551": {
+      "name": "Menu",
+      "tags": ["input"],
+      "excludeItemName": true
+    },
+    "779": {
+      "name": "Notify Cancel",
+      "tags": ["notification"]
+    },
+    "550": {
+      "name": "Popup",
+      "tags": ["input", "scene"],
+      "excludeItemName": true
+    },
+    "941": {
+      "name": "HTML Popup",
+      "tags": ["input", "scene"],
+      "excludeItemName": true
+    },
+    "552": {
+      "name": "Popup Task Buttons",
+      "tags": ["input", "scene"],
+      "excludeItemName": true
+    },
+    "999": {
+      "name": "Set Light"
+    },
+    "61": {
+      "name": "Vibrate",
+      "tags": ["vibrate"]
+    },
+    "62": {
+      "name": "Vibrate Pattern",
+      "tags": ["vibrate"]
+    },
+    "344": {
+      "name": "Test App",
+      "tags": ["app"]
+    },
+    "815": {
+      "name": "List Apps",
+      "tags": ["app"]
+    },
+    "349": {
+      "name": "Test System",
+      "tags": ["system"]
+    },
+    "566": {
+      "name": "Set Alarm",
+      "tags": ["alarm"]
+    },
+    "165": {
+      "name": "Cancel Alarm",
+      "tags": ["alarm"]
+    },
+    "166": {
+      "name": "Show Alarms",
+      "tags": ["alarm"]
+    },
+    "543": {
+      "name": "Start System Timer",
+      "tags": ["timer"]
+    },
+    "567": {
+      "name": "Calendar Insert",
+      "tags": ["calendar"]
+    },
+    "25": {
+      "name": "Go Home",
+      "tags": ["input"]
+    },
+    "18": {
+      "name": "Kill App",
+      "tags": ["app"]
+    },
+    "20": {
+      "name": "Launch App",
+      "tags": ["app"]
+    },
+    "119": {
+      "name": "Open Map"
+    },
+    "303": {
+      "name": "Alarm Volume",
+      "tags": ["alarm"]
+    },
+    "311": {
+      "name": "BT Voice Volume",
+      "tags": ["bluetooth", "sound"]
+    },
+    "309": {
+      "name": "DTMF Volume",
+      "tags": ["sound"]
+    },
+    "177": {
+      "name": "Haptic Feedback",
+      "tags": ["settings", "vibrate"]
+    },
+    "306": {
+      "name": "In-Call Volume",
+      "tags": ["sound", "phone"]
+    },
+    "307": {
+      "name": "Media Volume",
+      "tags": ["media", "sound"]
+    },
+    "301": {
+      "name": "Mic Mute",
+      "tags": ["sound"]
+    },
+    "305": {
+      "name": "Notification Volume",
+      "tags": ["notification", "sound"]
+    },
+    "258": {
+      "name": "Vibrate On Notify",
+      "tags": ["notification"]
+    },
+    "304": {
+      "name": "Ringer Volume",
+      "tags": ["sound", "phone"]
+    },
+    "256": {
+      "name": "Vibrate On Ringer",
+      "tags": ["vibrate", "phone"]
+    },
+    "308": {
+      "name": "System Volume",
+      "tags": ["sound"]
+    },
+    "310": {
+      "name": "Vibrate Mode",
+      "tags": ["vibrate", "settings"]
+    },
+    "136": {
+      "name": "Sound Effects",
+      "tags": ["sound"]
+    },
+    "254": {
+      "name": "Speakerphone",
+      "tags": ["phone"]
+    },
+    "235": {
+      "name": "Custom Setting",
+      "tags": ["settings"]
+    },
+    "200": {
+      "name": "All Settings",
+      "tags": ["settings"]
+    },
+    "236": {
+      "name": "Accessibility Settings",
+      "tags": ["settings"]
+    },
+    "199": {
+      "name": "Add Account Settings",
+      "tags": ["settings"]
+    },
+    "201": {
+      "name": "Airplane Mode Settings",
+      "tags": ["settings", "network"]
+    },
+    "202": {
+      "name": "APN Settings",
+      "tags": ["settings", "network"]
+    },
+    "216": {
+      "name": "App Settings",
+      "tags": ["settings", "app"]
+    },
+    "251": {
+      "name": "Battery Info",
+      "tags": ["battery"]
+    },
+    "226": {
+      "name": "App Manage Settings",
+      "tags": ["settings"]
+    },
+    "218": {
+      "name": "Bluetooth Settings",
+      "tags": ["settings", "bluetooth"]
+    },
+    "203": {
+      "name": "Date Settings",
+      "tags": ["settings", "network"]
+    },
+    "197": {
+      "name": "Developer Settings",
+      "tags": ["settings"]
+    },
+    "198": {
+      "name": "Device Info Settings",
+      "tags": ["settings"]
+    },
+    "959": {
+      "name": "Dream Settings",
+      "tags": ["settings"]
+    },
+    "234": {
+      "name": "Dictionary Settings",
+      "tags": ["settings"]
+    },
+    "222": {
+      "name": "Display Settings",
+      "tags": ["settings", "display"]
+    },
+    "210": {
+      "name": "InputMethod Settings",
+      "tags": ["settings", "input"]
+    },
+    "204": {
+      "name": "Internal Storage Settings",
+      "tags": ["settings"]
+    },
+    "224": {
+      "name": "Locale Settings",
+      "tags": ["settings"]
+    },
+    "208": {
+      "name": "Location Settings",
+      "tags": ["settings", "location"]
+    },
+    "227": {
+      "name": "Memory Card Settings",
+      "tags": ["settings"]
+    },
+    "956": {
+      "name": "NFC Settings",
+      "tags": ["settings", "nfc"]
+    },
+    "958": {
+      "name": "NFC Payment Settings",
+      "tags": ["settings", "nfc"]
+    },
+    "957": {
+      "name": "Android Beam Settings",
+      "tags": ["settings"]
+    },
+    "228": {
+      "name": "Network Operator Settings",
+      "tags": ["settings", "network"]
+    },
+    "237": {
+      "name": "Notification Listener Settings",
+      "tags": ["settings", "notification"]
+    },
+    "257": {
+      "name": "Power Usage Settings",
+      "tags": ["settings", "battery"]
+    },
+    "238": {
+      "name": "Privacy Settings",
+      "tags": ["settings"]
+    },
+    "239": {
+      "name": "Print Settings",
+      "tags": ["settings"]
+    },
+    "229": {
+      "name": "Quick Launch Settings",
+      "tags": ["settings"]
+    },
+    "230": {
+      "name": "Security Settings",
+      "tags": ["settings"]
+    },
+    "220": {
+      "name": "Mobile Data Settings",
+      "tags": ["settings", "network"]
+    },
+    "231": {
+      "name": "Search Settings",
+      "tags": ["settings"]
+    },
+    "232": {
+      "name": "Sound Settings",
+      "tags": ["settings", "sound"]
+    },
+    "211": {
+      "name": "Sync Settings",
+      "tags": ["settings"]
+    },
+    "206": {
+      "name": "WIFI Settings",
+      "tags": ["settings", "network"]
+    },
+    "212": {
+      "name": "WIFI IP Settings",
+      "tags": ["settings", "network"]
+    },
+    "214": {
+      "name": "Wireless Settings",
+      "tags": ["settings", "network"]
+    },
+    "348": {
+      "name": "Test Display",
+      "tags": ["display"]
+    },
+    "808": {
+      "name": "Auto Brightness",
+      "tags": ["settings"]
+    },
+    "150": {
+      "name": "Keyguard",
+      "tags": ["input"]
+    },
+    "15": {
+      "name": "Lock",
+      "tags": ["input"]
+    },
+    "16": {
+      "name": "System Lock",
+      "tags": ["input"]
+    },
+    "810": {
+      "name": "Display Brightness",
+      "tags": ["display"]
+    },
+    "812": {
+      "name": "Display Timeout",
+      "tags": ["display"]
+    },
+    "822": {
+      "name": "Display AutoRotate",
+      "tags": ["display"]
+    },
+    "109": {
+      "name": "Set Wallpaper"
+    },
+    "512": {
+      "name": "Status Bar",
+      "tags": ["ui"]
+    },
+    "988": {
+      "name": "Car Mode"
+    },
+    "989": {
+      "name": "Night Mode",
+      "tags": ["settings"]
+    },
+    "342": {
+      "name": "Test File",
+      "tags": ["file"]
+    },
+    "900": {
+      "name": "Browse Files",
+      "tags": ["file"]
+    },
+    "412": {
+      "name": "List Files",
+      "tags": ["file"]
+    },
+    "409": {
+      "name": "Create Directory",
+      "tags": ["file"]
+    },
+    "408": {
+      "name": "Delete Directory",
+      "tags": ["file"]
+    },
+    "405": {
+      "name": "Copy Dir",
+      "tags": ["file"]
+    },
+    "404": {
+      "name": "Copy File",
+      "tags": ["file"]
+    },
+    "406": {
+      "name": "Delete File",
+      "tags": ["file"]
+    },
+    "400": {
+      "name": "Move",
+      "tags": ["file"]
+    },
+    "102": {
+      "name": "Open File",
+      "tags": ["file"]
+    },
+    "376": {
+      "name": "Share File",
+      "tags": ["file"]
+    },
+    "417": {
+      "name": "Read File",
+      "tags": ["file"]
+    },
+    "776": {
+      "name": "Read Binary",
+      "tags": ["file"]
+    },
+    "775": {
+      "name": "Write Binary",
+      "tags": ["file"]
+    },
+    "415": {
+      "name": "Read Line",
+      "tags": ["file"]
+    },
+    "416": {
+      "name": "Read Paragraph",
+      "tags": ["file"]
+    },
+    "410": {
+      "name": "Write File",
+      "tags": ["file"]
+    },
+    "422": {
+      "name": "UnZip",
+      "tags": ["file"]
+    },
+    "420": {
+      "name": "Zip",
+      "tags": ["file"]
+    },
+    "476": {
+      "name": "GUnzip",
+      "tags": ["file"]
+    },
+    "475": {
+      "name": "GZip",
+      "tags": ["file"]
+    },
+    "513": {
+      "name": "Close System Dialogs",
+      "tags": ["input"]
+    },
+    "703": {
+      "name": "Button",
+      "tags": ["input"]
+    },
+    "701": {
+      "name": "Dpad",
+      "tags": ["input"]
+    },
+    "702": {
+      "name": "Type",
+      "tags": ["input"]
+    },
+    "987": {
+      "name": "Soft Keyboard",
+      "tags": ["input"]
+    },
+    "904": {
+      "name": "Voice Command",
+      "tags": ["input", "voice"]
+    },
+    "443": {
+      "name": "Media Control",
+      "tags": ["media"]
+    },
+    "189": {
+      "name": "Crop Image",
+      "tags": ["file"]
+    },
+    "190": {
+      "name": "Flip Image",
+      "tags": ["file"]
+    },
+    "193": {
+      "name": "Resize Image",
+      "tags": ["file"]
+    },
+    "188": {
+      "name": "Load Image",
+      "tags": ["file"]
+    },
+    "185": {
+      "name": "Filter Image",
+      "tags": ["file"]
+    },
+    "187": {
+      "name": "Save Image",
+      "tags": ["file"]
+    },
+    "191": {
+      "name": "Rotate Image",
+      "tags": ["file"]
+    },
+    "490": {
+      "name": "Media Button Events",
+      "tags": ["media"]
+    },
+    "445": {
+      "name": "Music Play",
+      "tags": ["media"]
+    },
+    "447": {
+      "name": "Music Play Dir",
+      "tags": ["media"]
+    },
+    "451": {
+      "name": "Music Skip",
+      "tags": ["media"]
+    },
+    "453": {
+      "name": "Music Back",
+      "tags": ["media"]
+    },
+    "449": {
+      "name": "Music Stop",
+      "tags": ["media"]
+    },
+    "171": {
+      "name": "Beep",
+      "tags": ["sound"]
+    },
+    "172": {
+      "name": "Morse"
+    },
+    "192": {
+      "name": "Play Ringtone",
+      "tags": ["sound"]
+    },
+    "101": {
+      "name": "Take Photo",
+      "tags": ["camera"]
+    },
+    "176": {
+      "name": "Take Screenshot",
+      "tags": ["camera"]
+    },
+    "455": {
+      "name": "Record Audio",
+      "tags": ["media"]
+    },
+    "657": {
+      "name": "Record Audio Stop",
+      "tags": ["media"]
+    },
+    "457": {
+      "name": "Default Ringtone",
+      "tags": ["phone", "sound"]
+    },
+    "459": {
+      "name": "Scan Media",
+      "tags": ["file", "media"]
+    },
+    "877": {
+      "name": "Send Intent",
+      "tags": ["intent"],
+      "excludeItemName": true
+    },
+    "901": {
+      "name": "Stop Location",
+      "tags": ["location"]
+    },
+    "902": {
+      "name": "Get Location",
+      "tags": ["location"]
+    },
+    "915": {
+      "name": "CPU",
+      "tags": ["system"]
+    },
+    "332": {
+      "name": "GPS",
+      "tags": ["location"]
+    },
+    "59": {
+      "name": "Reboot",
+      "tags": ["system"]
+    },
+    "112": {
+      "name": "Run SL4A Script",
+      "tags": ["sl4a"]
+    },
+    "667": {
+      "name": "SQL Query",
+      "tags": ["sql"]
+    },
+    "664": {
+      "name": "Java Function",
+      "tags": ["java"]
+    },
+    "665": {
+      "name": "Java Object",
+      "tags": ["java"]
+    },
+    "123": {
+      "name": "Run Shell",
+      "tags": ["shell"]
+    },
+    "124": {
+      "name": "Remount",
+      "tags": ["file"]
+    },
+    "559": {
+      "name": "Say",
+      "tags": ["voice"]
+    },
+    "699": {
+      "name": "Say To File",
+      "tags": ["voice"]
+    },
+    "697": {
+      "name": "Shut Up",
+      "tags": ["voice"]
+    },
+    "100": {
+      "name": "Search",
+      "tags": ["app"]
+    },
+    "161": {
+      "name": "Setup App Shortcuts",
+      "tags": ["app"]
+    },
+    "162": {
+      "name": "Setup Quick Setting",
+      "tags": ["app"]
+    },
+    "143": {
+      "name": "Edit Scene",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "142": {
+      "name": "Edit Task",
+      "tags": ["tasker"]
+    },
+    "147": {
+      "name": "Show Prefs",
+      "tags": ["tasker"]
+    },
+    "148": {
+      "name": "Show Runlog",
+      "tags": ["tasker"]
+    },
+    "157": {
+      "name": "Quick Setting Add",
+      "tags": ["settings", "app"]
+    },
+    "158": {
+      "name": "Quick Setting Remove",
+      "tags": ["settings", "app"]
+    },
+    "105": {
+      "name": "Set Clipboard"
+    },
+    "440": {
+      "name": "Set Timezone",
+      "tags": ["settings"]
+    },
+    "173": {
+      "name": "Network Access",
+      "tags": ["network"]
+    },
+    "331": {
+      "name": "Auto-Sync",
+      "tags": ["settings"]
+    },
+    "294": {
+      "name": "Bluetooth",
+      "tags": ["bluetooth"]
+    },
+    "346": {
+      "name": "Test Phone",
+      "tags": ["phone"]
+    },
+    "296": {
+      "name": "Bluetooth Voice",
+      "tags": ["bluetooth"]
+    },
+    "295": {
+      "name": "Bluetooth ID",
+      "tags": ["bluetooth"]
+    },
+    "104": {
+      "name": "Browse URL",
+      "tags": ["http"]
+    },
+    "125": {
+      "name": "Compose Email"
+    },
+    "118": {
+      "name": "HTTP Get",
+      "tags": ["http"]
+    },
+    "117": {
+      "name": "HTTP Head",
+      "tags": ["http"]
+    },
+    "116": {
+      "name": "HTTP Post",
+      "tags": ["http"]
+    },
+    "450": {
+      "name": "APN Droid"
+    },
+    "735": {
+      "name": "Mobile Data 2G/3G",
+      "tags": ["network"]
+    },
+    "114": {
+      "name": "USB Tether",
+      "tags": ["network"]
+    },
+    "341": {
+      "name": "Test Net",
+      "tags": ["network"]
+    },
+    "425": {
+      "name": "WiFi",
+      "tags": ["network"]
+    },
+    "426": {
+      "name": "WiFi Net",
+      "tags": ["network"]
+    },
+    "427": {
+      "name": "WiFi Sleep",
+      "tags": ["network"]
+    },
+    "113": {
+      "name": "WiFi Tether",
+      "tags": ["network"]
+    },
+    "439": {
+      "name": "WiMax",
+      "tags": ["network"]
+    },
+    "90": {
+      "name": "Call",
+      "tags": ["phone"]
+    },
+    "910": {
+      "name": "Call Log",
+      "tags": ["phone"]
+    },
+    "95": {
+      "name": "Call Block",
+      "tags": ["phone"]
+    },
+    "97": {
+      "name": "Call Divert",
+      "tags": ["phone"]
+    },
+    "99": {
+      "name": "Call Revert",
+      "tags": ["phone"]
+    },
+    "111": {
+      "name": "Compose MMS",
+      "tags": ["sms", "mms"]
+    },
+    "250": {
+      "name": "Compose SMS",
+      "tags": ["sms"]
+    },
+    "909": {
+      "name": "Contacts",
+      "tags": ["phone"]
+    },
+    "733": {
+      "name": "End Call",
+      "tags": ["phone"]
+    },
+    "732": {
+      "name": "Radio",
+      "tags": ["network"]
+    },
+    "41": {
+      "name": "Send SMS",
+      "tags": ["sms"]
+    },
+    "42": {
+      "name": "Send Data SMS",
+      "tags": ["sms"]
+    },
+    "734": {
+      "name": "Silence Ringer",
+      "tags": ["phone", "sound"]
+    },
+    "731": {
+      "name": "Take Call",
+      "tags": ["phone"]
+    },
+    "46": {
+      "name": "Create Scene",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "69": {
+      "name": "Element Create",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "73": {
+      "name": "Element Destroy",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "47": {
+      "name": "Show Scene",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "48": {
+      "name": "Hide Scene",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "49": {
+      "name": "Destroy Scene",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "194": {
+      "name": "Test Scene",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "195": {
+      "name": "Test Element",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "60": {
+      "name": "Element Add GeoMarker",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "63": {
+      "name": "Element Delete GeoMarker",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "68": {
+      "name": "Element Focus",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "57": {
+      "name": "Element Position",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "58": {
+      "name": "Element Size",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "67": {
+      "name": "Element Depth",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "53": {
+      "name": "Element Web Control",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "612": {
+      "name": "Element Video Control",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "64": {
+      "name": "Element Map Control",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "66": {
+      "name": "Element Image",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "54": {
+      "name": "Element Text Colour",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "71": {
+      "name": "Element Text Size",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "51": {
+      "name": "Element Text",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "50": {
+      "name": "Element Value",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "55": {
+      "name": "Element Back Colour",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "56": {
+      "name": "Element Border",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "65": {
+      "name": "Element Visibility",
+      "tags": ["scene"],
+      "excludeItemName": true
+    },
+    "300": {
+      "name": "Anchor",
+      "tags": ["tasker"],
+      "excludeItemName": true
+    },
+    "544": {
+      "name": "Timer Widget Control",
+      "tags": ["widget"]
+    },
+    "153": {
+      "name": "Import Data",
+      "tags": ["tasker"]
+    },
+    "546": {
+      "name": "Timer Widget Set",
+      "tags": ["widget"]
+    },
+    "347": {
+      "name": "Test Tasker",
+      "tags": ["tasker"]
+    },
+    "140": {
+      "name": "Change Icon Set"
+    },
+    "135": {
+      "name": "Goto",
+      "excludeItemName": true
+    },
+    "37": {
+      "name": "If",
+      "excludeItemName": true
+    },
+    "43": {
+      "name": "Else",
+      "excludeItemName": true
+    },
+    "38": {
+      "name": "End If",
+      "excludeItemName": true
+    },
+    "39": {
+      "name": "For",
+      "excludeItemName": true
+    },
+    "40": {
+      "name": "End For",
+      "excludeItemName": true
+    },
+    "126": {
+      "name": "Return",
+      "excludeItemName": true
+    },
+    "131": {
+      "name": "JavaScript",
+      "tags": ["javascript"],
+      "excludeItemName": true
+    },
+    "129": {
+      "name": "JavaScriptlet",
+      "tags": ["javascript"],
+      "excludeItemName": true
+    },
+    "130": {
+      "name": "Perform Task",
+      "excludeItemName": true
+    },
+    "159": {
+      "name": "Profile Status",
+      "tags": ["tasker"]
+    },
+    "134": {
+      "name": "Query Action"
+    },
+    "152": {
+      "name": "Set Widget Icon",
+      "tags": ["widget"]
+    },
+    "155": {
+      "name": "Set Widget Label",
+      "tags": ["widget"]
+    },
+    "139": {
+      "name": "Disable",
+      "tags": ["tasker"]
+    },
+    "138": {
+      "name": "Set Tasker Icon",
+      "tags": ["tasker"]
+    },
+    "133": {
+      "name": "Set Tasker Pref",
+      "tags": ["tasker"]
+    },
+    "137": {
+      "name": "Stop",
+      "excludeItemName": true
+    },
+    "30": {
+      "name": "Wait",
+      "excludeItemName": true
+    },
+    "35": {
+      "name": "Wait Until",
+      "excludeItemName": true
+    },
+    "345": {
+      "name": "Test Variable",
+      "excludeItemName": true
+    },
+    "355": {
+      "name": "Array Push",
+      "tags": ["array"],
+      "excludeItemName": true
+    },
+    "356": {
+      "name": "Array Pop",
+      "tags": ["array"],
+      "excludeItemName": true
+    },
+    "354": {
+      "name": "Array Set",
+      "tags": ["array"],
+      "excludeItemName": true
+    },
+    "369": {
+      "name": "Array Process",
+      "tags": ["array"],
+      "excludeItemName": true
+    },
+    "357": {
+      "name": "Array Clear",
+      "tags": ["array"],
+      "excludeItemName": true
+    },
+    "549": {
+      "name": "Variable Clear",
+      "excludeItemName": true
+    },
+    "596": {
+      "name": "Variable Convert",
+      "excludeItemName": true
+    },
+    "890": {
+      "name": "Variable Subtract",
+      "excludeItemName": true
+    },
+    "888": {
+      "name": "Variable Add",
+      "excludeItemName": true
+    },
+    "592": {
+      "name": "Variable Join",
+      "excludeItemName": true
+    },
+    "597": {
+      "name": "Variable Section",
+      "excludeItemName": true
+    },
+    "595": {
+      "name": "Variable Query",
+      "excludeItemName": true
+    },
+    "598": {
+      "name": "Variable Search Replace",
+      "tags": ["regex"]
+    },
+    "547": {
+      "name": "Variable Set",
+      "excludeItemName": true
+    },
+    "590": {
+      "name": "Variable Split",
+      "tags": ["array"]
+    },
+    "545": {
+      "name": "Variable Randomize"
+    },
+    "558": {
+      "name": "Android Notifier",
+      "tags": ["3rd party"]
+    },
+    "371": {
+      "name": "Astrid",
+      "tags": ["3rd party"]
+    },
+    "555": {
+      "name": "BeyondPod",
+      "tags": ["3rd party"]
+    },
+    "568": {
+      "name": "DailyRoads Voyager",
+      "tags": ["3rd party"]
+    },
+    "599": {
+      "name": "Due Today",
+      "tags": ["3rd party"]
+    },
+    "911": {
+      "name": "Gentle Alarm",
+      "tags": ["3rd party"]
+    },
+    "456": {
+      "name": "JD APN",
+      "tags": ["3rd party"]
+    },
+    "395": {
+      "name": "JD Status",
+      "tags": ["3rd party"]
+    },
+    "556": {
+      "name": "GrazeRSS",
+      "tags": ["3rd party"]
+    },
+    "643": {
+      "name": "OfficeTalk",
+      "tags": ["3rd party"]
+    },
+    "442": {
+      "name": "SleepBot",
+      "tags": ["3rd party"]
+    },
+    "553": {
+      "name": "SMS Backup+",
+      "tags": ["3rd party"]
+    },
+    "444": {
+      "name": "TeslaLED",
+      "tags": ["3rd party"]
+    },
+    "458": {
+      "name": "WidgetLocker",
+      "tags": ["3rd party"]
+    }
+  },
+  "event": {
+    "2080": {
+      "name": "BT Connection",
+      "tags": ["bluetooth"]
+    },
+    "2081": {
+      "name": "Music Track Changed",
+      "tags": ["media"]
+    },
+    "2083": {
+      "name": "Significant Motion",
+      "tags": ["sensor"]
+    },
+    "2084": {
+      "name": "Alarm Changed",
+      "tags": ["alarm"]
+    },
+    "2085": {
+      "name": "Logcat Entry",
+      "tags": ["logcat"]
+    },
+    "2077": {
+      "name": "Secondary App Opened",
+      "tags": ["app"]
+    },
+    "2078": {
+      "name": "App Changed",
+      "tags": ["app"]
+    },
+    "203": {
+      "name": "Battery Changed",
+      "tags": ["battery"]
+    },
+    "205": {
+      "name": "Battery Full",
+      "tags": ["battery"]
+    },
+    "206": {
+      "name": "Battery Overheating",
+      "tags": ["battery"]
+    },
+    "305": {
+      "name": "Alarm Clock",
+      "tags": ["alarm"]
+    },
+    "306": {
+      "name": "Alarm Done",
+      "tags": ["alarm"]
+    },
+    "300": {
+      "name": "Date Set",
+      "tags": ["system"]
+    },
+    "302": {
+      "name": "Time/Date Set",
+      "tags": ["system"]
+    },
+    "304": {
+      "name": "Timezone Set",
+      "tags": ["system"]
+    },
+    "210": {
+      "name": "Display Off",
+      "tags": ["display"]
+    },
+    "208": {
+      "name": "Display On",
+      "tags": ["display"]
+    },
+    "1000": {
+      "name": "Display Unlocked",
+      "tags": ["display"]
+    },
+    "230": {
+      "name": "File Attribute Change",
+      "tags": ["file"]
+    },
+    "224": {
+      "name": "File Closed",
+      "tags": ["file"]
+    },
+    "228": {
+      "name": "File Deleted",
+      "tags": ["file"]
+    },
+    "222": {
+      "name": "File Modified",
+      "tags": ["file"]
+    },
+    "220": {
+      "name": "File Moved",
+      "tags": ["file"]
+    },
+    "226": {
+      "name": "File Opened",
+      "tags": ["file"]
+    },
+    "3000": {
+      "name": "Gesture",
+      "tags": ["input"]
+    },
+    "3001": {
+      "name": "Shake",
+      "tags": ["input"]
+    },
+    "309": {
+      "name": "Steps Taken",
+      "tags": ["sensor"]
+    },
+    "2003": {
+      "name": "Missed Call",
+      "tags": ["phone"]
+    },
+    "4": {
+      "name": "Phone Idle",
+      "tags": ["phone"]
+    },
+    "2": {
+      "name": "Phone Offhook",
+      "tags": ["phone"]
+    },
+    "6": {
+      "name": "Phone Ringing",
+      "tags": ["phone"]
+    },
+    "8": {
+      "name": "Received Data SMS",
+      "tags": ["sms"]
+    },
+    "7": {
+      "name": "Received Text",
+      "tags": ["sms"]
+    },
+    "2010": {
+      "name": "SMS Failure",
+      "tags": ["sms"]
+    },
+    "2005": {
+      "name": "SMS Success",
+      "tags": ["sms"]
+    },
+    "215": {
+      "name": "Button: Camera",
+      "tags": ["camera", "input"]
+    },
+    "216": {
+      "name": "Button: Long Search",
+      "tags": ["input"]
+    },
+    "134": {
+      "name": "Card Mounted",
+      "tags": ["file"]
+    },
+    "136": {
+      "name": "Card Removed",
+      "tags": ["file"]
+    },
+    "135": {
+      "name": "Card Unmounted",
+      "tags": ["file"]
+    },
+    "599": {
+      "name": "Intent Received",
+      "tags": ["intent"],
+      "excludeItemName": true
+    },
+    "411": {
+      "name": "Device Boot",
+      "tags": ["system"]
+    },
+    "413": {
+      "name": "Device Shutdown",
+      "tags": ["system"]
+    },
+    "422": {
+      "name": "Device Storage Low",
+      "tags": ["system"]
+    },
+    "429": {
+      "name": "Locale Changed",
+      "tags": ["system"]
+    },
+    "450": {
+      "name": "New Package",
+      "tags": ["app"]
+    },
+    "453": {
+      "name": "Package Updated",
+      "tags": ["app"]
+    },
+    "451": {
+      "name": "Package Removed",
+      "tags": ["app"]
+    },
+    "307": {
+      "name": "Monitor Start",
+      "tags": ["tasker"]
+    },
+    "303": {
+      "name": "Timer Change"
+    },
+    "460": {
+      "name": "Wallpaper Changed"
+    },
+    "3060": {
+      "name": "Variable Cleared"
+    },
+    "3050": {
+      "name": "Variable Set"
+    },
+    "462": {
+      "name": "Button Widget Clicked",
+      "tags": ["widget"]
+    },
+    "201": {
+      "name": "Assistance Request",
+      "tags": ["app"]
+    },
+    "463": {
+      "name": "New Window",
+      "tags": ["ui"]
+    },
+    "461": {
+      "name": "Notification",
+      "tags": ["notification"]
+    },
+    "464": {
+      "name": "Notification Removed",
+      "tags": ["notification"]
+    },
+    "2000": {
+      "name": "Notification Click",
+      "tags": ["notification"]
+    },
+    "2050": {
+      "name": "Quick Setting Clicked",
+      "tags": ["app"]
+    },
+    "2075": {
+      "name": "Custom Setting",
+      "tags": ["settings"]
+    },
+    "2076": {
+      "name": "NFC Tag",
+      "tags": ["nfc"]
+    },
+    "2079": {
+      "name": "Volume Long Press",
+      "tags": ["input"]
+    },
+    "425": {
+      "name": "K9 Email Received",
+      "tags": ["3rd party"]
+    },
+    "446": {
+      "name": "Gentle Alarm",
+      "tags": ["3rd party"]
+    },
+    "428": {
+      "name": "Kaloer Clock",
+      "tags": ["3rd party"]
+    },
+    "448": {
+      "name": "Notify My Android",
+      "tags": ["3rd party"]
+    },
+    "444": {
+      "name": "Pomodroido",
+      "tags": ["3rd party"]
+    },
+    "445": {
+      "name": "Radardroid",
+      "tags": ["3rd party"]
+    },
+    "447": {
+      "name": "Reddit Notify",
+      "tags": ["3rd party"]
+    },
+    "424": {
+      "name": "Screebl / TSC",
+      "tags": ["3rd party"]
+    },
+    "426": {
+      "name": "Widget Locker",
+      "tags": ["3rd party"]
+    },
+    "427": {
+      "name": "OpenWatch",
+      "tags": ["3rd party"]
+    }
+  }
+}
