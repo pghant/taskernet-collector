@@ -3,6 +3,7 @@ from urllib.parse import urlparse, parse_qs, quote_plus
 import xml.etree.ElementTree as ET
 import json
 import functools
+import os
 
 import googleplay_api as gplay
 
@@ -60,7 +61,9 @@ def parse_datadef():
 
 @functools.lru_cache(maxsize=16)
 def get_datadef():
-  with open('datadef.json', 'r') as f:
+  datadef_dir = os.path.dirname(os.path.realpath(__file__))
+  datadef_file = os.path.join(datadef_dir, 'datadef.json')
+  with open(datadef_file, 'r') as f:
     return json.load(f)
 
 def parse_tasker_data(tasker_data):
