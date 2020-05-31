@@ -8,6 +8,7 @@ from algoliasearch.exceptions import RequestException
 
 import utils
 import taskernet_api as api
+import googleplay_api as gplay
 
 class SearchResult():
   def __init__(self, result):
@@ -23,6 +24,26 @@ class TaskerNetDatabase():
     app_id = os.getenv('ALGOLIA_APP_ID')
     self.db = SearchClient.create(app_id, api_key)
     self.shares_index = self.db.init_index('shares')
+    self.plugins_index = self.db.init_index('plugins')
+  
+  def add_plugin(self, package):
+    app_name = gplay.get_app_name(package)
+    try:
+      plugin = {
+        'objectID': package,
+        'appName': app_name,
+      }
+      self.plugins_index.save_object(plugin)
+      return plugin
+    except:
+      logging.error(f'Error when adding plugin to index: {package}')
+      return None
+  
+  def get_plugin(self, package):
+    try:
+      return self.plugins_index.get_object(package)
+    except RequestException:
+      return self.add_plugin(package)
   
   def get_share_by_id(self, object_id):
     try:
@@ -63,10 +84,14 @@ class TaskerNetDatabase():
       source_links = list(set(source_links))
 
     try:
-      tags, names = utils.get_tags_and_names(tasker_data)
+      tags, names, plugin_packages = utils.parse_tasker_data(tasker_data)
     except:
       logging.warning(f'Error when parsing tasker data: {share_link}')
       return False
+    
+    for package in plugin_packages:
+      if plugin := self.get_plugin(package):
+        tags.append(plugin['appName'])
 
     date = None
     try:
@@ -87,7 +112,8 @@ class TaskerNetDatabase():
         'url': share_data['info']['url'],
         'recordUpdated': int(time.time()),
         'tags': tags,
-        'names': names
+        'names': names,
+        'plugins': plugin_packages
       })
     except:
       logging.error(f'Error when adding to index: {share_link}')
@@ -108,10 +134,14 @@ class TaskerNetDatabase():
       return False
     
     try:
-      tags, names = utils.get_tags_and_names(tasker_data)
+      tags, names, plugin_packages = utils.parse_tasker_data(tasker_data)
     except:
       logging.warning(f'Error when parsing tasker data: {share_link}')
       return False
+    
+    for package in plugin_packages:
+      if plugin := self.get_plugin(package):
+        tags.append(plugin['appName'])
 
     date = None
     try:
@@ -127,7 +157,8 @@ class TaskerNetDatabase():
       'downloads': share_data['info']['stats']['downloads'],
       'recordUpdated': int(time.time()),
       'tags': tags,
-      'names': names
+      'names': names,
+      'plugins': plugin_packages
     })
 
     return True

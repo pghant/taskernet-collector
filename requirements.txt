@@ -2,3 +2,4 @@ requests
 praw
 psaw
 algoliasearch
+beautifulsoup4

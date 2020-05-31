@@ -4,6 +4,8 @@ import xml.etree.ElementTree as ET
 import json
 import functools
 
+import googleplay_api as gplay
+
 PRAW_SITE_NAME = 'taskernet_bot'
 MONITORED_SUBREDDITS = 'tasker+taskernet'
 
@@ -61,11 +63,12 @@ def get_datadef():
   with open('datadef.json', 'r') as f:
     return json.load(f)
 
-def get_tags_and_names(tasker_data):
+def parse_tasker_data(tasker_data):
   lookup = get_datadef()
   root = ET.fromstring(tasker_data)
   all_tags = set()
   all_names = set()
+  plugins = set()
   for element in root.iter():
     if element.tag in {'State', 'Event', 'Action'}:
       code = element.find('code').text
@@ -75,5 +78,8 @@ def get_tags_and_names(tasker_data):
           all_names.add(tasker_element['name'])
         if 'tags' in tasker_element:
           all_tags.update(tasker_element['tags'])
+      else:
+        if element.find('Bundle'):
+          plugins.add(element.find('Str[@sr="arg1"]').text)
   
-  return list(all_tags), list(all_names)
+  return list(all_tags), list(all_names), list(plugins)
