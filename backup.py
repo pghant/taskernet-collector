@@ -18,7 +18,7 @@ def backup_index(index):
   for hit in index.browse_objects({'query': ''}):
     hits.append(hit)
 
-  with open(f'backup-{index}.json', 'w') as f:
+  with open(f'backup-{index.name}.json', 'w') as f:
     json.dump(hits, f)
 
 backup_index(share_index)
