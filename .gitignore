@@ -9,6 +9,9 @@ start.sh
 logs/
 scratch.py
 
+# IDE
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
