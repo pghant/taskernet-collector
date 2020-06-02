@@ -1,7 +1,5 @@
 # taskernet-collector
 .DS_Store
-*.json
-!datadef.json
 *.ini
 *.log
 *.xml
@@ -130,9 +128,6 @@ venv.bak/
 
 # Rope project settings
 .ropeproject
-
-# mkdocs documentation
-/site
 
 # mypy
 .mypy_cache/
