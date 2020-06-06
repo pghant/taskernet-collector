@@ -19,7 +19,7 @@ running = True
 while running:
   try:
     for comment in subreddit.stream.comments():
-      if comment.author.name != 'taskernet-collector':
+      if comment.author and comment.author.name != 'taskernet-collector':
         taskernet_links = TASKERNET_RE.findall(comment.body)
         source_link = f'https://reddit.com/comments/{comment.link_id[3:]}/_/{comment.id}'
         for link in taskernet_links:
