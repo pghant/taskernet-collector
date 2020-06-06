@@ -27,8 +27,8 @@ class TaskerNetDatabase():
     self.plugins_index = self.db.init_index('plugins')
   
   def add_plugin(self, package):
-    app_name = gplay.get_app_name(package)
     try:
+      app_name = gplay.get_app_name(package)
       plugin = {
         'objectID': package,
         'appName': app_name,
