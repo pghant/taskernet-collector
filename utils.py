@@ -73,7 +73,7 @@ def parse_tasker_data(tasker_data):
   all_names = set()
   plugins = set()
   for element in root.iter():
-    if element.tag in {'State', 'Event', 'Action'}:
+    if element.tag in {'State', 'Event', 'Action'} and element.find('code'):
       code = element.find('code').text
       tasker_element = lookup[element.tag.lower()][code] if code in lookup[element.tag.lower()] else None
       if tasker_element:
