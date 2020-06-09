@@ -25,7 +25,7 @@ def remove_unicode(text):
 # Either share_link or both user and share_id are required
 def share_object_id(share_link=None, user=None, share_id=None):
   try:
-    if share_link != None:
+    if share_link is not None:
       user, share_id = parse_link(share_link)
     return f'{user}_{share_id}'
   except:
@@ -73,7 +73,7 @@ def parse_tasker_data(tasker_data):
   all_names = set()
   plugins = set()
   for element in root.iter():
-    if element.tag in {'State', 'Event', 'Action'} and element.find('code') != None:
+    if element.tag in {'State', 'Event', 'Action'} and element.find('code') is not None:
       code = element.find('code').text
       tasker_element = lookup[element.tag.lower()][code] if code in lookup[element.tag.lower()] else None
       if tasker_element:
@@ -82,7 +82,7 @@ def parse_tasker_data(tasker_data):
         if 'tags' in tasker_element:
           all_tags.update(tasker_element['tags'])
       else:
-        if element.find('./Bundle/Vals/plugintypeid'):
+        if element.find('./Bundle/Vals/plugintypeid') is not None:
           plugins.add(element.find('Str[@sr="arg1"]').text)
   
   return list(all_tags), list(all_names), list(plugins)

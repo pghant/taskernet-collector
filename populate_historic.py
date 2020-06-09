@@ -39,7 +39,7 @@ def add_shares(taskernet_links, source_link):
     try:
       # Add share if it doesn't exist already
       object_id = share_object_id(share_link=link)
-      if object_id != None and db.get_share_by_id(object_id) == None:
+      if object_id is not None and db.get_share_by_id(object_id) is None:
         success = db.add_share(link, source_link)
         time.sleep(10) # don't overload API
       else:
@@ -55,7 +55,7 @@ def process_comments(comments):
   completed = 0
   for comment in comments:
     taskernet_links = TASKERNET_RE.findall(comment.body)
-    if comment.author != None and comment.author.name != 'taskernet-collector' and len(taskernet_links) > 0:
+    if comment.author is not None and comment.author.name != 'taskernet-collector' and len(taskernet_links) > 0:
       source_link = f'https://reddit.com/comments/{comment.link_id[3:]}/_/{comment.id}'
       add_shares(taskernet_links, source_link)
       completed += 1

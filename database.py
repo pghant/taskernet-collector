@@ -54,7 +54,7 @@ class TaskerNetDatabase():
   def add_share(self, share_link, source_link):
     user, share_id = utils.parse_link(share_link)
     object_id = utils.share_object_id(user=user, share_id=share_id)
-    if object_id == None:
+    if object_id is None:
       logging.warning(f'Invalid share link: {share_link} at {source_link}')
       return False
     existing_object = self.get_share_by_id(object_id)
@@ -64,7 +64,7 @@ class TaskerNetDatabase():
       tasker_data = api.get_tasker_data(share_link)
     except api.ShareDoesNotExistError:
       # Share link is removed. Delete any stored record
-      if existing_object != None:
+      if existing_object is not None:
         self.shares_index.delete_object(object_id)
       return True
     except api.GenericError:
@@ -73,13 +73,13 @@ class TaskerNetDatabase():
 
     # Check if the share description has a tag to ignore this share. Delete any stored record
     if utils.COLLECTOR_IGNORE_RE.search(share_data['info']['description']):
-      if existing_object != None:
+      if existing_object is not None:
         self.shares_index.delete_object(object_id)
       return True
 
     # Add this source link to existing source links if any
     source_links = [source_link]
-    if existing_object != None and 'sourceLinks' in existing_object:
+    if existing_object is not None and 'sourceLinks' in existing_object:
       source_links.extend(existing_object['sourceLinks'])
       source_links = list(set(source_links))
 
