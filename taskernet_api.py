@@ -9,7 +9,7 @@ from utils import parse_link
 
 def get_share_data(share_link):
   user, share_id = parse_link(share_link)
-  if user == None:
+  if user is None:
     raise InvalidShareUrlError(share_link)
 
   api_url = f'https://taskernet.com/_ah/api/datashare/v1/shares/{user}/{share_id}'
@@ -24,7 +24,7 @@ def get_share_data(share_link):
 
 def get_tasker_data(share_link):
   user, share_id = parse_link(share_link)
-  if user == None:
+  if user is None:
     raise InvalidShareUrlError(share_link)
 
   api_url = f'https://taskernet.com/_ah/api/datashare/v1/sharedata/{user}/{share_id}'
