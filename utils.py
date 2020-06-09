@@ -82,7 +82,7 @@ def parse_tasker_data(tasker_data):
         if 'tags' in tasker_element:
           all_tags.update(tasker_element['tags'])
       else:
-        if element.find('./Bundle/Vals/plugintypeid'):
+        if element.find('./Bundle/Vals/plugintypeid') != None:
           plugins.add(element.find('Str[@sr="arg1"]').text)
   
   return list(all_tags), list(all_names), list(plugins)
