@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import json
 import functools
 import os
+import unicodedata
 
 import googleplay_api as gplay
 
@@ -66,9 +67,17 @@ def get_datadef():
   with open(datadef_file, 'r') as f:
     return json.load(f)
 
+def remove_control_characters(s):
+  return ''.join(ch for ch in s if unicodedata.category(ch)[0] != 'C')
+
 def parse_tasker_data(tasker_data):
   lookup = get_datadef()
-  root = ET.fromstring(tasker_data)
+  try:
+    root = ET.fromstring(tasker_data)
+  except:
+    tasker_data = remove_control_characters(tasker_data)
+    root = ET.fromstring(tasker_data)
+
   all_tags = set()
   all_names = set()
   plugins = set()
@@ -84,5 +93,7 @@ def parse_tasker_data(tasker_data):
       else:
         if element.find('./Bundle/Vals/plugintypeid') is not None:
           plugins.add(element.find('Str[@sr="arg1"]').text)
+    elif element.tag == 'App' and element.find('appPkg') is not None:
+      plugins.add(element.find('appPkg').text)
   
   return list(all_tags), list(all_names), list(plugins)
