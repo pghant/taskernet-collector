@@ -104,6 +104,6 @@ def parse_tasker_data(tasker_data):
           plugins.add(element.find('Str[@sr="arg1"]').text)
     elif element.tag == 'App' and element.find('appPkg') is not None:
       pkgs = element.find('appPkg').text.split(',')
-      plugins.update(p.strip() for p in pkgs)
+      plugins.update(p.strip() for p in pkgs if '%' not in p)
   
   return list(all_tags), list(all_names), list(plugins)
