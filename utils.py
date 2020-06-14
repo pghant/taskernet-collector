@@ -5,6 +5,7 @@ import json
 import functools
 import os
 import unicodedata
+import itertools
 
 import googleplay_api as gplay
 
@@ -16,6 +17,7 @@ COLLECTOR_COMMAND_SEARCH_RE = re.compile(r'search "(?P<terms>.*?)"', re.IGNORECA
 HTML_TAG_RE = re.compile(r'<.*?>')
 UNICODE_RE = re.compile(r'[^\x00-\x7F]+')
 COLLECTOR_IGNORE_RE = re.compile(r'\[no\-collect\]')
+XML_NS_RE = re.compile(r'</?.+?:.+?>')
 
 def remove_html_tags(text):
   return re.sub(HTML_TAG_RE, '', text)
@@ -70,12 +72,19 @@ def get_datadef():
 def remove_control_characters(s):
   return ''.join(ch for ch in s if unicodedata.category(ch)[0] != 'C')
 
+def remove_namespaces(xml):
+  ns_tags = list(set(XML_NS_RE.findall(xml)))
+  repls = [e.replace(':', '_') for e in ns_tags]
+  for tag, repl in itertools.zip_longest(ns_tags, repls):
+    xml = xml.replace(tag, repl)
+  return xml
+
 def parse_tasker_data(tasker_data):
   lookup = get_datadef()
   try:
     root = ET.fromstring(tasker_data)
   except:
-    tasker_data = remove_control_characters(tasker_data)
+    tasker_data = remove_namespaces(remove_control_characters(tasker_data))
     root = ET.fromstring(tasker_data)
 
   all_tags = set()
