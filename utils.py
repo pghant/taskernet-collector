@@ -102,7 +102,7 @@ def parse_tasker_data(tasker_data):
       else:
         if element.find('./Bundle/Vals/plugintypeid') is not None or element.find('./Bundle/Vals/net.dinglisch.android.tasker.subbundled') is not None:
           plugins.add(element.find('Str[@sr="arg1"]').text)
-    elif element.tag == 'App' and element.find('appPkg') is not None:
+    elif element.tag == 'App' and element.find('appPkg') is not None and element.find('appPkg').text is not None:
       pkgs = element.find('appPkg').text.split(',')
       plugins.update(p.strip() for p in pkgs if '%' not in p)
   
