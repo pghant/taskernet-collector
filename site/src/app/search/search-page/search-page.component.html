@@ -1,8 +1,8 @@
 <div class="container">
   <h3 class="text-center">Search for Taskernet shares</h3>
-  <form class="mt-4 form-inline justify-content-center">
+  <form class="mt-4 form-inline justify-content-center" [formGroup]="searchForm" (ngSubmit)="onSearch()">
     <label class="sr-only" for="search-box">Search</label>
-    <input id="search-box" type="text" placeholder="Enter search terms">
+    <input id="search-box" type="text" placeholder="Enter search terms" formControlName="searchBox">
     <button type="submit" class="btn btn-primary ml-1">Search</button>
   </form>
   <div id="results" class="mt-4 px-5">

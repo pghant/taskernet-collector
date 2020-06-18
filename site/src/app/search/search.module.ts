@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { SearchService } from './search-service/search.service';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
     ReactiveFormsModule,
 
     SearchRoutingModule
-  ]
+  ],
+  providers: [SearchService]
 })
 export class SearchModule { }
