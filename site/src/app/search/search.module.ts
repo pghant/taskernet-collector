@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchPageComponent } from './search-page/search-page.component';
@@ -9,6 +10,9 @@ import { SearchPageComponent } from './search-page/search-page.component';
   declarations: [SearchPageComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     SearchRoutingModule
   ]
 })
