@@ -1,0 +1,19 @@
+.share-type {
+  font-size: 1rem;
+  padding: 0.375em 0.6em;
+}
+
+.card-text {
+  padding: 1.2rem;
+  list-style-position: inside;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.card-footer {
+  padding: 0.5rem 1.25rem;
+}
+
+.tags .badge {
+  margin-right: 0.25rem;
+}

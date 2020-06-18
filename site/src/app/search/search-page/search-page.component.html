@@ -5,27 +5,7 @@
     <input id="search-box" type="text" placeholder="Enter search terms" formControlName="searchBox">
     <button type="submit" class="btn btn-primary ml-1">Search</button>
   </form>
-  <div id="results" class="mt-4 px-5">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><span class="share-type badge badge-info">Task</span> Example Task</h5>
-        <p class="card-text">
-          Here's a description of the task that you will import. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sunt, maxime voluptatibus laborum cum, doloremque error cumque aliquid et doloribus illum dolores velit, officia delectus quibusdam eos ab quod? Perspiciatis?
-        </p>
-        <a href="#" class="btn btn-sm btn-primary">Taskernet Import</a>
-        <div class="tags mt-3">
-          <span class="badge badge-pill badge-secondary">input</span>
-          <span class="badge badge-pill badge-secondary">app</span>
-          <span class="badge badge-pill badge-secondary">sound</span>
-          <span class="badge badge-pill badge-secondary">media</span>
-          <span class="badge badge-pill badge-secondary">AutoNotification</span>
-          <span class="badge badge-pill badge-secondary">AutoApps</span>
-          <span class="badge badge-pill badge-secondary">Messages</span>
-        </div>
-      </div>
-      <div class="card-footer text-muted">
-        <small>Last Updated: 2020-02-03</small>
-      </div>
-    </div>
+  <div id="results" class="mt-4 px-lg-5">
+    <app-share-result *ngFor="let share of (searchResults$ | async)" [share]="share"></app-share-result>
   </div>
 </div>
