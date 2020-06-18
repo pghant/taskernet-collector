@@ -18,6 +18,10 @@ export class SearchService {
   }
 
   search(terms: string): Observable<Share[]> {
-    return from(this.sharesIndex.search<Share>(terms).then(({ hits }) => { return hits; }));
+    const searchOptions = {
+      'hitsPerPage': 10,
+      'attributesToHighlight': []
+    };
+    return from(this.sharesIndex.search<Share>(terms, searchOptions).then(({ hits }) => { return hits; }));
   }
 }

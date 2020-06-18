@@ -8,4 +8,7 @@ export interface Share {
   url: string;
   date: number;
   plugins: string[];
+  downloads: number;
+  views: number;
+  recordUpdated: number;
 }
