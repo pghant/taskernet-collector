@@ -1,6 +1,17 @@
 .share-type {
   font-size: 1rem;
   padding: 0.375em 0.6em;
+  color: white;
+  
+  &.badge-task {
+    background-color: cornflowerblue;
+  }
+  &.badge-profile {
+    background-color: darkgreen;
+  }
+  &.badge-project {
+    background-color: darkorchid;
+  }
 }
 
 .card-text {

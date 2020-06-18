@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Share } from '../models';
 
 @Component({
@@ -6,8 +6,25 @@ import { Share } from '../models';
   templateUrl: './share-result.component.html',
   styleUrls: ['./share-result.component.scss']
 })
-export class ShareResultComponent {
+export class ShareResultComponent implements OnInit {
   @Input() share: Share;
+  public shareTypeClass: string;
 
   constructor() { }
+
+  ngOnInit(): void {
+    switch (this.share.type) {
+      case 'Task':
+        this.shareTypeClass = 'badge-task';
+        break;
+      case 'Project':
+        this.shareTypeClass = 'badge-project';
+        break;
+      case 'Profile':
+        this.shareTypeClass = 'badge-profile';
+        break;
+      default:
+        break;
+    }
+  }
 }
