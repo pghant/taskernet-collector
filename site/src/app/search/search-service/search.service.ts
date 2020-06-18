@@ -17,10 +17,11 @@ export class SearchService {
     this.pluginsIndex = client.initIndex('plugins');
   }
 
-  search(terms: string): Observable<Share[]> {
+  search(terms: string, page: number = 0): Observable<Share[]> {
     const searchOptions = {
       'hitsPerPage': 10,
-      'attributesToHighlight': []
+      'attributesToHighlight': [],
+      'page': page
     };
     return from(this.sharesIndex.search<Share>(terms, searchOptions).then(({ hits }) => { return hits; }));
   }
