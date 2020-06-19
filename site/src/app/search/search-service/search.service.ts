@@ -23,6 +23,6 @@ export class SearchService {
       'attributesToHighlight': [],
       'page': page
     };
-    return from(this.sharesIndex.search<Share>(terms, searchOptions).then(({ hits }) => { return hits; }));
+    return from(this.sharesIndex.search<Share>(terms, searchOptions).then(resp => resp.hits));
   }
 }

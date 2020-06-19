@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -22,13 +23,22 @@ export class SearchPageComponent implements OnInit {
   private currentPage: number;
   private searchResultsSub: Subscription;
 
-  constructor(private searchService: SearchService) { }
-
-  ngOnInit(): void {
+  constructor(private searchService: SearchService, private router: Router, activatedRoute: ActivatedRoute) {
+    const snapshot = activatedRoute.snapshot;
     this.searchResults = [];
     this.currentPage = 0;
-    this.currentSearchTerms = '';
     this.hasSearched = false;
+    if (snapshot.queryParamMap.has('q')) {
+      this.currentSearchTerms = snapshot.queryParamMap.get('q');
+      this.hasSearched = true;
+    }
+  }
+
+  ngOnInit(): void {
+    if (this.hasSearched) {
+      this.searchForm.get('searchBox').setValue(this.currentSearchTerms);
+      this.search();
+    }
   }
 
   onSearch(): void {
@@ -37,6 +47,7 @@ export class SearchPageComponent implements OnInit {
       this.currentSearchTerms = this.searchForm.get('searchBox').value;
       this.searchResults = [];
       this.currentPage = 0;
+      this.router.navigate([], {queryParams: { 'q': this.currentSearchTerms }, replaceUrl: true})
       this.search();
     }
   }
