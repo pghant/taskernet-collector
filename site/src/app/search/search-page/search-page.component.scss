@@ -1,0 +1,10 @@
+#search-box {
+  height: 2.5rem;
+  border: 1px #888 solid;
+  padding: 0.5rem 5.5rem 0.5rem 0.5rem;
+  border-radius: 5px;
+  flex-grow: 1;
+  max-width: 800px;
+  background: url(../../../assets/algolia-logo.svg) no-repeat right center;
+  background-size: 5rem 1rem;
+}

@@ -1,0 +1,24 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><span class="share-type badge" [ngClass]="shareTypeClass">{{ share.type }}</span> {{ share.name }}</h5>
+    <p class="share-description card-text p-2 p-md-4" [innerHTML]="share.description"></p>
+    <div class="my-3">
+      <strong>Sources: </strong>
+      <a class="mr-1" target="_blank" rel="noopener noreferrer" [href]="url" *ngFor="let url of share.sourceLinks">[Source]</a>
+      <br>
+      <strong>Views: </strong>{{ share.views }}
+      <strong>Downloads: </strong>{{ share.downloads }}
+      <br>
+      <strong>Modified: </strong>{{ share.date | date }}
+    </div>
+    <a target="_blank" rel="noopener noreferrer" [href]="share.url" class="btn btn-sm btn-primary">Taskernet Import</a>
+    <div class="tags mt-3">
+      <span class="badge badge-pill badge-secondary" *ngFor="let tag of share.tags">
+        {{ tag }}
+      </span>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <small>Share details as of {{ (share.recordUpdated * 1000) | date }}</small>
+  </div>
+</div>

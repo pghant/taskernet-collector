@@ -1,13 +1,14 @@
 # taskernet-collector
 .DS_Store
-*.json
-!datadef.json
 *.ini
 *.log
 *.xml
 start.sh
 logs/
 scratch.py
+
+# IDE
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -127,9 +128,6 @@ venv.bak/
 
 # Rope project settings
 .ropeproject
-
-# mkdocs documentation
-/site
 
 # mypy
 .mypy_cache/
