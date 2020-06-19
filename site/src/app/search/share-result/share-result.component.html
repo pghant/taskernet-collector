@@ -8,7 +8,8 @@
       <br>
       <strong>Views: </strong>{{ share.views }}
       <strong>Downloads: </strong>{{ share.downloads }}
-      <span class="font-italic text-muted">(As of {{ (share.recordUpdated * 1000) | date }})</span>
+      <br>
+      <strong>Modified: </strong>{{ share.date | date }}
     </div>
     <a target="_blank" rel="noopener noreferrer" [href]="share.url" class="btn btn-sm btn-primary">Taskernet Import</a>
     <div class="tags mt-3">
@@ -18,6 +19,6 @@
     </div>
   </div>
   <div class="card-footer text-muted">
-    <small>Last Updated: {{ share.date | date }}</small>
+    <small>Share details as of {{ (share.recordUpdated * 1000) | date }}</small>
   </div>
 </div>
