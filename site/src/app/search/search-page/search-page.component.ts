@@ -18,24 +18,22 @@ export class SearchPageComponent implements OnInit {
   });
   public searchResults: Share[];
   public hasSearched: boolean;
+  public isLoading: boolean;
 
   private currentSearchTerms: string;
   private currentPage: number;
   private searchResultsSub: Subscription;
 
-  constructor(private searchService: SearchService, private router: Router, activatedRoute: ActivatedRoute) {
-    const snapshot = activatedRoute.snapshot;
+  constructor(private searchService: SearchService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.searchResults = [];
     this.currentPage = 0;
     this.hasSearched = false;
-    if (snapshot.queryParamMap.has('q')) {
-      this.currentSearchTerms = snapshot.queryParamMap.get('q');
-      this.hasSearched = true;
-    }
   }
 
   ngOnInit(): void {
-    if (this.hasSearched) {
+    const snapshot = this.activatedRoute.snapshot;
+    if (snapshot.queryParamMap.has('q')) {
+      this.currentSearchTerms = snapshot.queryParamMap.get('q');
       this.searchForm.get('searchBox').setValue(this.currentSearchTerms);
       this.search();
     }
@@ -43,7 +41,6 @@ export class SearchPageComponent implements OnInit {
 
   onSearch(): void {
     if (this.searchForm.valid) {
-      this.hasSearched = true;
       this.currentSearchTerms = this.searchForm.get('searchBox').value;
       this.searchResults = [];
       this.currentPage = 0;
@@ -58,10 +55,13 @@ export class SearchPageComponent implements OnInit {
   }
 
   search(): void {
+    this.isLoading = true;
     this.searchResultsSub = this.searchService.search(this.currentSearchTerms, this.currentPage)
         .subscribe(results => {
           this.searchResults.push(...results);
           this.searchResultsSub.unsubscribe();
+          this.hasSearched = true;
+          this.isLoading = false;
         });
   }
 
