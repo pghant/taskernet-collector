@@ -1,5 +1,8 @@
 <div class="container">
   <h4 class="text-center">Search for Taskernet shares</h4>
+  <div class="disclaimer text-center">
+    <strong>Warning:</strong> Remember to always check the description before importing anything from Taskernet. Do not enable anything unless you are sure what it does.
+  </div>
   <form class="mt-4 form-inline justify-content-center" [formGroup]="searchForm" (ngSubmit)="onSearch()">
     <label class="sr-only" for="search-box">Search</label>
     <input id="search-box" type="text" placeholder="Enter search terms" formControlName="searchBox">
