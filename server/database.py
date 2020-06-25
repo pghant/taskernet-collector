@@ -24,6 +24,7 @@ class TaskerNetDatabase():
     app_id = os.getenv('ALGOLIA_APP_ID')
     self.db = SearchClient.create(app_id, api_key)
     self.shares_index = self.db.init_index('shares')
+    self.shares_by_updated_index = self.db.init_index('shares_by_updated')
     self.plugins_index = self.db.init_index('plugins')
   
   def add_plugin(self, package):
@@ -188,5 +189,5 @@ class TaskerNetDatabase():
       'filters': f'recordUpdated <= {timestamp}',
       'hitsPerPage': num_retrieve
     }
-    res = self.shares_index.search('', request_options)
+    res = self.shares_by_updated_index.search('', request_options)
     return [SearchResult(r) for r in res['hits']]
