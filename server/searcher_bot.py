@@ -1,6 +1,7 @@
 import re
 import time
 import textwrap
+from urllib.parse import quote_plus
 
 import praw
 from prawcore.exceptions import PrawcoreException
@@ -36,6 +37,8 @@ def search_reply(terms):
       for link in r.source_links:
         reply += f'[[Source]({link})] '
       reply += '\n'
+  results_link = f'https://pghant.github.io/taskernet-collector/search?q={quote_plus(terms)}'
+  reply += f'\n**See more information and more results [here]({results_link}).**\n'
   reply += REPLY_FOOTER
   return reply
 
